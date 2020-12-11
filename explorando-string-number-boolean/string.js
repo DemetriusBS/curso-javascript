@@ -20,3 +20,22 @@ console.log(nome.charCodeAt(9))
 
 //recuperar o index a partir de um valor
 console.log(nome.indexOf('S'))
+
+//Recuperando o índice do último caractere pesquisado
+console.log(nome.lastIndexOf('a'))
+
+//Concatenar mais dados na string
+console.log(nome.concat(' - Seja bem vindo(a)!').concat(" Obrigado por nos visitar!"))
+
+//Retorna um código html
+console.log('sub', nome.sub())
+console.log('sup', nome.sup())
+
+//Buscar uma quantidade de caracter a partir de um índice
+console.log(nome.substr(0,5))
+
+//Buscar parte de uma string informando o índice inicial e final
+console.log(nome.substring(0,10))
+console.log(nome.substring(5))
+
+
