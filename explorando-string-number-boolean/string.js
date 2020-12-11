@@ -38,4 +38,19 @@ console.log(nome.substr(0,5))
 console.log(nome.substring(0,10))
 console.log(nome.substring(5))
 
+//replace - substituir dados em uma string
+console.log(nome.replace('a', '?'))
+console.log(nome.replace(/a/g, '?'))
 
+nome = nome.replace(/\?/g, function(x){
+  return 'a'
+})
+
+console.log(nome)
+
+//split - dividir a string
+console.log(nome.split(''))
+console.log(nome.split(" "))
+console.log(nome.split(" ", 1))
+console.log(nome.split('a'))
+console.log(nome.split(/ da /g))
