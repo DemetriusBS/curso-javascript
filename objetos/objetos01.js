@@ -49,8 +49,31 @@ for (var contato of objetoPessoa.contatos) {
 console.log('Endereço: ', objetoPessoa.endereco.rua)
 for (var key in objetoPessoa.endereco) {
     console.log(key, objetoPessoa.endereco[key]) 
+    
     }
 
 //Chamar método
 console.log(objetoPessoa.saudacao)
 console.log(objetoPessoa.saudacao())
+
+//Criar um objeto com construtor Object
+var objetoProduto = new Object()
+objetoProduto.nome ='Mesa'
+objetoProduto.preco = 89.99
+objetoProduto.dimensoes = {largura: '1m', comprimento: '1,5m', altura: '90cm'}
+objetoProduto['nome no formato string válido'] = 'deu certo isso'
+var nomeProp = 'novoNome'
+objetoProduto[nomeProp] = 'deu certo o novo nome'
+objetoProduto[''] = 'vazio'
+objetoProduto['123'] = 123
+
+//Acessar usando operador membro
+console.log('Nome: ', objetoProduto['nome'])
+console.log('Altura: ', objetoProduto.dimensoes.altura)
+console.log('Cubo', objetoProduto.dimensoes.cubo)
+//console.log('Cubo', objetoProduto.dimensoes.cubo.valor) //Gerou erro ao acessar uma propriedade de undefined
+console.log(objetoProduto['nome no formato string válido'], objetoProduto['nome no formato string válido'])
+
+for (var elemento in objetoProduto.dimensoes) {
+    console.log(elemento, objetoProduto.dimensoes[elemento])
+}
