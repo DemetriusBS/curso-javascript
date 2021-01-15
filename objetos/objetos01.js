@@ -48,9 +48,9 @@ for (var contato of objetoPessoa.contatos) {
 }
 console.log('Endereço: ', objetoPessoa.endereco.rua)
 for (var key in objetoPessoa.endereco) {
-    console.log(key, objetoPessoa.endereco[key]) 
-    
-    }
+    console.log(key, objetoPessoa.endereco[key])
+
+}
 
 //Chamar método
 console.log(objetoPessoa.saudacao)
@@ -58,9 +58,9 @@ console.log(objetoPessoa.saudacao())
 
 //Criar um objeto com construtor Object
 var objetoProduto = new Object()
-objetoProduto.nome ='Mesa'
+objetoProduto.nome = 'Mesa'
 objetoProduto.preco = 89.99
-objetoProduto.dimensoes = {largura: '1m', comprimento: '1,5m', altura: '90cm'}
+objetoProduto.dimensoes = { largura: '1m', comprimento: '1,5m', altura: '90cm' }
 objetoProduto['nome no formato string válido'] = 'deu certo isso'
 var nomeProp = 'novoNome'
 objetoProduto[nomeProp] = 'deu certo o novo nome'
@@ -79,7 +79,7 @@ for (var elemento in objetoProduto.dimensoes) {
 }
 
 //Objeto por referência
-var obj1 = {matricula: 18}
+var obj1 = { matricula: 18 }
 console.log('obj1: ', obj1.matricula)
 var obj2 = obj1
 console.log('obj2 matricula: ', obj2.matricula)
@@ -109,3 +109,27 @@ console.log('toString in pedido com hasOwnProperty: ', pedido.hasOwnProperty('to
 pedido.totalItens = 23
 console.log('Removeu a prop totalItens?: ', delete pedido.totalItens)
 console.log('totalItens: ', pedido.totalItens)
+
+//Como obter as chaves(nome de propriedades) do objeto
+var produtoTeste = { nome: 'teste', valor: 12, ativo: true }
+var chaves = Object.keys(produtoTeste)
+console.log('Object.keys(produtoTeste): ', chaves)
+console.log('Tipo com typeof: ', typeof chaves)
+console.log(Object.prototype.toString.call(chaves))
+console.log('Verificar se é um array com Array.isArray: ', Array.isArray(chaves))
+
+//Acessar os valores das propriedades do objeto
+for (var prop in produtoTeste) {
+    console.log(produtoTeste[prop])
+}
+
+var valoresProp = Object.values(produtoTeste) //ES2017
+console.log('Object.values(produtoTeste): ', valoresProp)
+
+//Recuperar as propriedades e valores do objeto
+var chavesValores = Object.entries(valoresProp)
+console.log(chavesValores)
+
+for (const [chave, valor] of chavesValores) {
+    console.log(chave + ':', valor)
+}
