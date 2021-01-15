@@ -77,3 +77,16 @@ console.log(objetoProduto['nome no formato string válido'], objetoProduto['nome
 for (var elemento in objetoProduto.dimensoes) {
     console.log(elemento, objetoProduto.dimensoes[elemento])
 }
+
+//Objeto por referência
+var obj1 = {matricula: 18}
+console.log('obj1: ', obj1.matricula)
+var obj2 = obj1
+console.log('obj2 matricula: ', obj2.matricula)
+obj2.matricula = 28
+console.log('obj1 matricula: ', obj1.matricula)
+console.log('obj2 matricula: ', obj2.matricula)
+
+obj2 = null //Limpar a memória
+console.log('Tipo objeto: typeof', typeof obj1)
+console.log('Tipo objeto: instanceof', obj1 instanceof Object)
