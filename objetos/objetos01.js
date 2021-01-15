@@ -90,3 +90,22 @@ console.log('obj2 matricula: ', obj2.matricula)
 obj2 = null //Limpar a memória
 console.log('Tipo objeto: typeof', typeof obj1)
 console.log('Tipo objeto: instanceof', obj1 instanceof Object)
+
+//Verificar se uma propriedade ou método existe no objeto ou em sua cadeia de protótipos
+
+var pedido = new Object()
+pedido.total = 233.45
+console.log('cliente in pedido: ', 'cliente' in pedido)
+console.log('total in pedido: ', 'total' in pedido)
+
+//O in verifica se a propriedade ou método existe no objeto e na cadeia de protótipo
+
+console.log('toString in pedido: ', 'toString' in pedido)
+
+console.log('total in pedido com hasOwnProperty: ', pedido.hasOwnProperty('total'))
+console.log('toString in pedido com hasOwnProperty: ', pedido.hasOwnProperty('toString'))
+
+//Deletar propriedades do objeto e método
+pedido.totalItens = 23
+console.log('Removeu a prop totalItens?: ', delete pedido.totalItens)
+console.log('totalItens: ', pedido.totalItens)
