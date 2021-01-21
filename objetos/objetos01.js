@@ -133,3 +133,23 @@ console.log(chavesValores)
 for (const [chave, valor] of chavesValores) {
     console.log(chave + ':', valor)
 }
+
+//Criando propriedades de objeto de acesso e dado - get e set - atributos de propriedade
+
+var folhaPagamento = {
+    _total: 0, //Nomenclatura para atributos privados
+    set total(valor) {
+        // novoValor = valor + 1
+        //this._total = novoValor
+        this._total = valor
+    },
+    get total() {
+        //Regra de negócio para tratar o retorno
+        return this._total
+    }
+}
+
+folhaPagamento.total = 75233,75
+console.log('Total da folha de pagamento: R$ ', folhaPagamento.total)
+
+console.log('Atributos das propriedades do objeto: ', Object.getOwnPropertyDescriptors(folhaPagamento))
