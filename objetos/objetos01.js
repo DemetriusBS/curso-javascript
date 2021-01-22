@@ -1,5 +1,6 @@
 //Como criar objetos
 //Literal
+/*
 var objPessoa01 = { nome: 'Diego' }
 console.log(objPessoa01.nome)
 
@@ -153,3 +154,57 @@ folhaPagamento.total = 75233,75
 console.log('Total da folha de pagamento: R$ ', folhaPagamento.total)
 
 console.log('Atributos das propriedades do objeto: ', Object.getOwnPropertyDescriptors(folhaPagamento))
+
+var salarios = {
+  _remuneracao: 988,
+
+  set aaaa(novoValor){
+      this._remuneracao = novoValor
+  },
+
+  get aaaa(){
+      return this._remuneracao
+  }
+}
+
+salarios.aaaa = 1050
+console.log(salarios)
+*/
+
+//Verificar se uma propriedade é iteravel / enumerável
+
+var objTeste = { a: 1, b: 2, c: 3 }
+console.log('a in objTeste:', 'a' in objTeste)
+console.log(objTeste.propertyIsEnumerable('a'))
+console.log(objTeste.propertyIsEnumerable('toString'))
+console.log(objTeste.propertyIsEnumerable('length'))
+
+console.log(objTeste)
+for (var [k, v] of Object.entries(objTeste)) {
+    console.log(k, v)
+}
+
+Object.defineProperty(objTeste, 'a', {
+    enumerable: false,
+    configurable: false
+})
+
+console.log('----------------------------------')
+
+for (var [k, v] of Object.entries(objTeste)) {
+    console.log(k, v)
+}
+
+delete objTeste.a
+
+//Tornar uma propriedade gravável em não gravável
+objTeste.b = 10
+console.log(objTeste.b)
+
+Object.defineProperty(objTeste, 'b', {
+    writable: false
+})
+
+objTeste.b = 20
+console.log(objTeste.b)
+
