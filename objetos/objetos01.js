@@ -169,7 +169,7 @@ var salarios = {
 
 salarios.aaaa = 1050
 console.log(salarios)
-*/
+
 
 //Verificar se uma propriedade é iteravel / enumerável
 
@@ -207,4 +207,47 @@ Object.defineProperty(objTeste, 'b', {
 
 objTeste.b = 20
 console.log(objTeste.b)
+*/
 
+//Definindo propriedades e atributos 
+var objAluno2 = {}
+Object.defineProperties(objAluno2, {
+    nome: {
+        value: 'Fernanda',
+        enumerable: true,
+        configurable: true,
+        writable: true
+    },
+    turma: {
+        value: 'A',
+        enumerable: true,
+        configurable: false,
+        writable: false
+    }
+})
+
+console.log(objAluno2)
+objAluno2.turma = 'B'
+delete objAluno2.turma
+console.log(objAluno2)
+
+var objAluno3 = {}
+Object.defineProperties(objAluno3, {
+    _nome: {
+        value: 'Mateus',
+        enumerable: true,
+        configurable: true,
+        writable: true
+    },
+    nome: {
+        get: function () {
+            return this._nome + 'Turma: A'
+        },
+        set: function (valor) {
+            this._nome = valor
+        }
+    }
+})
+
+objAluno3.nome = 'Diego '
+console.log('Nome do aluno: ', objAluno3.nome)
