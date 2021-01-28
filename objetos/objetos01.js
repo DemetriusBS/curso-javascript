@@ -251,7 +251,7 @@ Object.defineProperties(objAluno3, {
 
 objAluno3.nome = 'Diego '
 console.log('Nome do aluno: ', objAluno3.nome)
-*/
+
 
 //Recuperar as informações de atributos de propriedades
 
@@ -259,3 +259,27 @@ var objCarro = {marca: 'Fiat', cor: 'Preta'}
 console.log('1 - Object.getOwnPropertyDescriptors(objCarro): ', Object.getOwnPropertyDescriptors(objCarro))
 Object.defineProperty(objCarro, 'cor', {enumerable: false, configurable: false, writable: false})
 console.log('2 - Object.getOwnPropertyDescriptors(objCarro): ', Object.getOwnPropertyDescriptors(objCarro))
+*/
+
+//Travar objeto para ficar não extensível
+var moto = {marca: 'Yamaha', cor: 'Vermelha'}
+console.log('(Object.getOwnPropertyDescriptors(moto): ', Object.getOwnPropertyDescriptors(moto))
+console.log('Object.isExtensible(moto):', Object.isExtensible(moto))
+console.log('Object.preventExtensions(moto): ', Object.preventExtensions(moto))
+moto.placa = 'AMD 4766'
+moto.ligar = function(){
+    return 'moto ligada'
+}
+console.log('(Object.getOwnPropertyDescriptors(moto): ', Object.getOwnPropertyDescriptors(moto))
+console.log('Object.isExtensible(moto):', Object.isExtensible(moto))
+console.log('placa' in moto)
+console.log('ligar' in moto)
+
+moto.cor = 'Azul'
+console.log('(Object.getOwnPropertyDescriptors(moto): ', Object.getOwnPropertyDescriptors(moto))
+console.log('Object.isExtensible(moto):', Object.isExtensible(moto))
+
+console.log("delete moto.cor: ", delete moto.cor)
+console.log('(Object.getOwnPropertyDescriptors(moto): ', Object.getOwnPropertyDescriptors(moto))
+
+//Object.defineProperty(moto, 'cor', {value: 'Amarela'}) Gera um erro pois o objeto não é extensível
