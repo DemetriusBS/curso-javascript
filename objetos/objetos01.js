@@ -207,7 +207,7 @@ Object.defineProperty(objTeste, 'b', {
 
 objTeste.b = 20
 console.log(objTeste.b)
-*/
+
 
 //Definindo propriedades e atributos 
 var objAluno2 = {}
@@ -251,3 +251,11 @@ Object.defineProperties(objAluno3, {
 
 objAluno3.nome = 'Diego '
 console.log('Nome do aluno: ', objAluno3.nome)
+*/
+
+//Recuperar as informações de atributos de propriedades
+
+var objCarro = {marca: 'Fiat', cor: 'Preta'}
+console.log('1 - Object.getOwnPropertyDescriptors(objCarro): ', Object.getOwnPropertyDescriptors(objCarro))
+Object.defineProperty(objCarro, 'cor', {enumerable: false, configurable: false, writable: false})
+console.log('2 - Object.getOwnPropertyDescriptors(objCarro): ', Object.getOwnPropertyDescriptors(objCarro))
