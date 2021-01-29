@@ -259,7 +259,7 @@ var objCarro = {marca: 'Fiat', cor: 'Preta'}
 console.log('1 - Object.getOwnPropertyDescriptors(objCarro): ', Object.getOwnPropertyDescriptors(objCarro))
 Object.defineProperty(objCarro, 'cor', {enumerable: false, configurable: false, writable: false})
 console.log('2 - Object.getOwnPropertyDescriptors(objCarro): ', Object.getOwnPropertyDescriptors(objCarro))
-*/
+
 
 //Travar objeto para ficar não extensível
 var moto = {marca: 'Yamaha', cor: 'Vermelha'}
@@ -283,3 +283,24 @@ console.log("delete moto.cor: ", delete moto.cor)
 console.log('(Object.getOwnPropertyDescriptors(moto): ', Object.getOwnPropertyDescriptors(moto))
 
 //Object.defineProperty(moto, 'cor', {value: 'Amarela'}) Gera um erro pois o objeto não é extensível
+*/
+
+
+/*Como selar um objeto - um objeto selado não é extensível 
+Não pode add props
+As props não são configuráveis
+Não deletável
+*/
+
+var livro ={titulo: 'JS', paginas: 155}
+console.log(Object.isExtensible(livro))
+console.log(Object.isSealed(livro))
+console.log("Selando o objeto: ", Object.seal(livro))
+console.log(Object.isExtensible(livro))
+console.log(Object.isSealed(livro))
+
+console.log("Tentando deletar: ", delete livro.titulo)
+
+livro.paginas = 1456
+console.log(Object.getOwnPropertyDescriptors(livro))
+
