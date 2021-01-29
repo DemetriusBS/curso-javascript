@@ -283,7 +283,7 @@ console.log("delete moto.cor: ", delete moto.cor)
 console.log('(Object.getOwnPropertyDescriptors(moto): ', Object.getOwnPropertyDescriptors(moto))
 
 //Object.defineProperty(moto, 'cor', {value: 'Amarela'}) Gera um erro pois o objeto não é extensível
-*/
+
 
 
 /*Como selar um objeto - um objeto selado não é extensível 
@@ -292,6 +292,7 @@ As props não são configuráveis
 Não deletável
 */
 
+/*
 var livro ={titulo: 'JS', paginas: 155}
 console.log(Object.isExtensible(livro))
 console.log(Object.isSealed(livro))
@@ -303,4 +304,28 @@ console.log("Tentando deletar: ", delete livro.titulo)
 
 livro.paginas = 1456
 console.log(Object.getOwnPropertyDescriptors(livro))
+*/
 
+/*Congelando objetos, irá ficar não extensível
+Não configrável
+Não será possível gravar dados
+Não podem ser adcionada propriedades
+Não pode deletar props
+Não pode setar dados nas props
+*/
+
+var artigo = { autor: 'Demetrius', titulo: 'Professores chatos' }
+console.log(Object.isFrozen(artigo))
+console.log(Object.isExtensible(artigo))
+console.log(Object.isSealed(artigo))
+
+console.log('Congelando o objeto: ', Object.freeze(artigo))
+console.log(Object.isFrozen(artigo))
+console.log(Object.isExtensible(artigo))
+console.log(Object.isSealed(artigo))
+
+console.log(Object.getOwnPropertyDescriptors(artigo))
+
+artigo.titulo = 'Pior professor'
+artigo.paginas = 83 //add
+delete artigo.titulo //delete
