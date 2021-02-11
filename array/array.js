@@ -1,3 +1,4 @@
+/*
 //Literal
 var array =[]
 array[0] = 'Teste'
@@ -18,3 +19,20 @@ console.log('numeros2.length: ', numeros2.length)
 numeros2[0] = 56
 numeros2[1] = 77
 console.log(numeros2)
+*/
+
+//CRIAR UM ARRAY COM TIPAGEM FRACA
+
+var arrayTipagemFraca = [
+    'string',
+    24.33,
+    true,
+    { livro: 'Javascript', detalhe: { paginas: 23, ativo: true } },
+    [0, 1, 2, 3, 4, ['a', 'b', 'c']],
+    function(a, b){
+        return a + b
+    },
+]
+
+console.log('array', arrayTipagemFraca)
+console.log(arrayTipagemFraca[3])
