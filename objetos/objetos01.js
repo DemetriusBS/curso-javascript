@@ -312,7 +312,7 @@ Não será possível gravar dados
 Não podem ser adcionada propriedades
 Não pode deletar props
 Não pode setar dados nas props
-*/
+
 
 var artigo = { autor: 'Demetrius', titulo: 'Professores chatos' }
 console.log(Object.isFrozen(artigo))
@@ -329,3 +329,40 @@ console.log(Object.getOwnPropertyDescriptors(artigo))
 artigo.titulo = 'Pior professor'
 artigo.paginas = 83 //add
 delete artigo.titulo //delete
+*/
+
+//Trabalhando JSON
+
+var pessoa = {
+    nome: 'João da Silva',
+    cpf: 11536208699,
+    dataNasc: new Date(1974, 02, 15),
+    ativo: true,
+    'testeString': 'teste string',
+    contatos: [3332754, 745698, 121235],
+    endereco: {
+        rua: 'Rua F',
+        numero: 259,
+        cep: '2415589',
+        pontoRef: {
+            ponto1: 'ponto ref 1',
+            ponto2: 'ponto ref 2'
+        }
+    },
+    //error: new error('Gerou um erro'),
+    funcao: function () {
+        return 'teste'
+    },
+    valorNull: null,
+    valorUndefined: undefined,
+    valorNaN: NaN,
+    stringVazia: ''
+}
+
+console.log('ObjetoJS: ', pessoa)
+
+var retornoObjParaJson = JSON.stringify(pessoa)
+console.log('retornoObjParaJson: ', retornoObjParaJson)
+
+var retornoJsonParaObj = JSON.parse(retornoObjParaJson)
+console.log(retornoJsonParaObj)
