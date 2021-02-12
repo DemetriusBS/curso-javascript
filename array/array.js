@@ -19,7 +19,7 @@ console.log('numeros2.length: ', numeros2.length)
 numeros2[0] = 56
 numeros2[1] = 77
 console.log(numeros2)
-*/
+
 
 //CRIAR UM ARRAY COM TIPAGEM FRACA
 
@@ -36,3 +36,27 @@ var arrayTipagemFraca = [
 
 console.log('array', arrayTipagemFraca)
 console.log(arrayTipagemFraca[3])
+*/
+
+//Como acessar elemntos do array - O que são arrays com esparsos
+
+var a = ['a', 'b', 'c', 'd', 'e', 'f']
+console.log(a)
+console.log(a[0])
+console.log(a[5])
+var index = 4
+console.log(a[index])
+var existe1 = 5 in a
+var existe2 = 10 in a
+console.log('existe1: ', existe1)
+console.log('existe2: ', existe2) 
+
+
+//Array com esparsos
+
+var arrayComEspacos = ['teste', 'c',,,,true]
+console.log(arrayComEspacos)
+console.log(arrayComEspacos.length)
+arrayComEspacos[15] = 15
+console.log(arrayComEspacos)
+console.log(arrayComEspacos.length)
